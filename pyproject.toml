@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "revolut-assistant"
+version = "0.1.0"
+description = ""
+authors = ["Ashleen <2552805d@student.gla.ac.uk>"]
+readme = "README.md"
+packages = [{include = "revolut_assistant"}]
+
+[tool.poetry.dependencies]
+python = "3.11.4"
+streamlit = "^1.23.1"
+matplotlib = "^3.7.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
