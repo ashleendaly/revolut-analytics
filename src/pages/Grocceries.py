@@ -20,8 +20,13 @@ df = groccery_data()
 monthly_sum = df.groupby([pd.Grouper(key='Started Date', freq='M'), 'Description']).sum()['Amount'].abs()
 st.write(monthly_sum)
 
+total_monthly_sum = df.groupby(pd.Grouper(key='Started Date', freq='M')).sum()["Amount"].abs()
+st.write(total_monthly_sum)
+
 grouped_df = df.groupby(['Started Date', 'Description']).sum()['Amount'].abs()
 pivoted_df = grouped_df.unstack('Description')
+
+st.write(pivoted_df)
 
 fig, ax = plt.subplots()
 pivoted_df.plot(kind='bar', stacked=True, ax=ax)
